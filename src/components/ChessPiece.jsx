@@ -1,4 +1,4 @@
-import { Pawn, Rook, Knight, Queen } from 'lucide-react';
+import { CircleDot, Hexagon, Triangle, Star, Crown } from 'lucide-react';
 
 const ChessPiece = ({ piece }) => {
   const color = piece === piece.toUpperCase() ? 'white' : 'black';
@@ -7,16 +7,17 @@ const ChessPiece = ({ piece }) => {
   const getPieceComponent = () => {
     switch (piece.toLowerCase()) {
       case 'p':
-        return <Pawn size={size} />;
+        return <CircleDot size={size} />;
       case 'r':
-        return <Rook size={size} />;
+        return <Hexagon size={size} />;
       case 'n':
-        return <Knight size={size} />;
+        return <Triangle size={size} />;
       case 'b':
+        return <Star size={size} />;
       case 'q':
-        return <Queen size={size} />;
+        return <Crown size={size} />;
       case 'k':
-        return <Queen size={size} />; // Using Queen icon for King as well
+        return <Crown size={size} strokeWidth={3} />; // Thicker stroke for the king
       default:
         return null;
     }
