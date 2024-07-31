@@ -1,4 +1,4 @@
-import { Pawn, Rook, Knight, Queen, King } from 'lucide-react';
+import { Pawn, Rook, Knight, Queen } from 'lucide-react';
 
 const ChessPiece = ({ piece }) => {
   const color = piece === piece.toUpperCase() ? 'white' : 'black';
@@ -12,10 +12,11 @@ const ChessPiece = ({ piece }) => {
         return <Rook size={size} />;
       case 'n':
         return <Knight size={size} />;
+      case 'b':
       case 'q':
         return <Queen size={size} />;
       case 'k':
-        return <King size={size} />;
+        return <Queen size={size} />; // Using Queen icon for King as well
       default:
         return null;
     }
