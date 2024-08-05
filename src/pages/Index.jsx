@@ -11,8 +11,8 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-8">Two-Player Chess</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+      <h1 className="text-5xl font-bold mb-8 text-primary">Futuristic Chess</h1>
       <div className="flex flex-col md:flex-row items-start gap-8">
         <ChessBoard currentPlayer={currentPlayer} onTurnChange={handleTurnChange} setGameStatus={setGameStatus} />
         <GameInfo currentPlayer={currentPlayer} gameStatus={gameStatus} />

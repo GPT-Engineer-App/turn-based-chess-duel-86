@@ -51,14 +51,14 @@ const ChessBoard = ({ currentPlayer, onTurnChange, setGameStatus }) => {
   }, [board, currentPlayer, setGameStatus]);
 
   return (
-    <div className="grid grid-cols-8 gap-0 border-4 border-gray-800">
+    <div className="grid grid-cols-8 gap-0 border-4 border-primary rounded-lg overflow-hidden glow">
       {board.map((row, y) =>
         row.map((piece, x) => (
           <div
             key={`${x}-${y}`}
             className={`w-16 h-16 flex items-center justify-center ${
-              (x + y) % 2 === 0 ? 'bg-gray-300' : 'bg-gray-600'
-            } ${selectedPiece && selectedPiece.x === x && selectedPiece.y === y ? 'bg-yellow-300' : ''}`}
+              (x + y) % 2 === 0 ? 'bg-secondary' : 'bg-background'
+            } ${selectedPiece && selectedPiece.x === x && selectedPiece.y === y ? 'bg-accent bg-opacity-50' : ''}`}
             onClick={() => handleSquareClick(x, y)}
           >
             {piece && <ChessPiece piece={piece} />}

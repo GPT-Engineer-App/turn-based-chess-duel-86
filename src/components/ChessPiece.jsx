@@ -1,7 +1,7 @@
-import { CircleDot, Hexagon, Triangle, Star, Crown } from 'lucide-react';
+import { CircleDot, Hexagon, Triangle, Star, Crown, Zap, Rocket } from 'lucide-react';
 
 const ChessPiece = ({ piece }) => {
-  const color = piece === piece.toUpperCase() ? 'white' : 'black';
+  const color = piece === piece.toUpperCase() ? 'text-primary' : 'text-destructive';
   const size = 40;
 
   const getPieceComponent = () => {
@@ -9,21 +9,21 @@ const ChessPiece = ({ piece }) => {
       case 'p':
         return <CircleDot size={size} />;
       case 'r':
-        return <Hexagon size={size} />;
+        return <Rocket size={size} />;
       case 'n':
         return <Triangle size={size} />;
       case 'b':
-        return <Star size={size} />;
+        return <Zap size={size} />;
       case 'q':
-        return <Crown size={size} />;
+        return <Star size={size} />;
       case 'k':
-        return <Crown size={size} strokeWidth={3} />; // Thicker stroke for the king
+        return <Crown size={size} />;
       default:
         return null;
     }
   };
 
-  return <div className={`text-${color}`}>{getPieceComponent()}</div>;
+  return <div className={`${color} transition-all duration-300 hover:scale-110`}>{getPieceComponent()}</div>;
 };
 
 export default ChessPiece;
