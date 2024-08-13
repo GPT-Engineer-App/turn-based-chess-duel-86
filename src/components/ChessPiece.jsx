@@ -1,7 +1,8 @@
 import { CircleDot, Hexagon, Triangle, Star, Crown, Zap, Rocket } from 'lucide-react';
 
 const ChessPiece = ({ piece }) => {
-  const color = piece === piece.toUpperCase() ? 'text-primary' : 'text-destructive';
+  const isWhite = piece === piece.toUpperCase();
+  const color = isWhite ? 'text-primary glow' : 'text-secondary glow-secondary';
   const size = 40;
 
   const getPieceComponent = () => {
@@ -23,7 +24,11 @@ const ChessPiece = ({ piece }) => {
     }
   };
 
-  return <div className={`${color} transition-all duration-300 hover:scale-110`}>{getPieceComponent()}</div>;
+  return (
+    <div className={`${color} transition-all duration-300 hover:scale-110 p-1 rounded-full`}>
+      {getPieceComponent()}
+    </div>
+  );
 };
 
 export default ChessPiece;

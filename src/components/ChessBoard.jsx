@@ -57,8 +57,9 @@ const ChessBoard = ({ currentPlayer, onTurnChange, setGameStatus }) => {
           <div
             key={`${x}-${y}`}
             className={`w-16 h-16 flex items-center justify-center ${
-              (x + y) % 2 === 0 ? 'bg-secondary' : 'bg-background'
-            } ${selectedPiece && selectedPiece.x === x && selectedPiece.y === y ? 'bg-accent bg-opacity-50' : ''}`}
+              (x + y) % 2 === 0 ? 'bg-secondary bg-opacity-20' : 'bg-background'
+            } ${selectedPiece && selectedPiece.x === x && selectedPiece.y === y ? 'bg-accent bg-opacity-30' : ''}
+            transition-all duration-300 hover:bg-primary hover:bg-opacity-20`}
             onClick={() => handleSquareClick(x, y)}
           >
             {piece && <ChessPiece piece={piece} />}
